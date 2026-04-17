@@ -597,7 +597,8 @@
           </li>
         </ul>
       </div>
-      <form class="reservation-form" id="res-form" novalidate>
+      <form class="reservation-form" id="res-form" name="reservation" data-netlify="true" novalidate>
+        <input type="hidden" name="form-name" value="reservation" />
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name</label>
@@ -653,7 +654,7 @@
           <textarea id="notes" name="notes" rows="3" placeholder="Dietary requirements, special occasion, seating preference…"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
-        <div class="form-success" id="form-success" hidden>
+        <div class="form-success" id="form-success">
           <svg><use href="#icon-check"/></svg>
           Thank you — we will confirm your reservation shortly.
         </div>

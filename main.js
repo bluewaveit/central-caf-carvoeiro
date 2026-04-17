@@ -82,7 +82,6 @@ if (dateInput) {
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  // Basic validation
   const required = form.querySelectorAll('[required]');
   let valid = true;
   required.forEach(field => {
@@ -99,16 +98,24 @@ form.addEventListener('submit', e => {
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Simulate API call
-  setTimeout(() => {
-    form.reset();
-    btn.textContent = 'Confirm Reservation';
-    btn.disabled = false;
-    success.hidden = false;
-    success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-    setTimeout(() => { success.hidden = true; }, 6000);
-  }, 1200);
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(new FormData(form)).toString()
+  })
+    .then(() => {
+      form.reset();
+      btn.textContent = 'Confirm Reservation';
+      btn.disabled = false;
+      success.classList.add('visible');
+      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      setTimeout(() => { success.classList.remove('visible'); }, 6000);
+    })
+    .catch(() => {
+      btn.textContent = 'Confirm Reservation';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call us directly.');
+    });
 });
 
 // ── Gallery lightbox (simple) ─────────────────────────────
