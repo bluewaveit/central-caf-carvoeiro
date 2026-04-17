@@ -516,12 +516,12 @@ footer { background: var(--dark); padding: 4rem 0 0; }
 .social-links { display: flex; gap: 0.65rem; margin-bottom: 1.75rem; }
 .social-links a {
   width: 38px; height: 38px; border-radius: 8px;
-  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.28);
   display: flex; align-items: center; justify-content: center;
   transition: background var(--ease), border-color var(--ease);
 }
 .social-links a:hover { background: var(--ember); border-color: var(--ember); }
-.social-links svg { width: 17px; height: 17px; stroke: rgba(255,255,255,0.7); }
+.social-links svg { width: 17px; height: 17px; stroke: rgba(255,255,255,1); }
 
 .footer-rating { display: flex; flex-direction: column; gap: 0.35rem; }
 .rating-stars { display: flex; gap: 2px; }
