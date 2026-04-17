@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Central Café – Restaurant & Lounge Bar · Carvoeiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ INLINE SVG SYMBOL DEFS (reused throughout) ══════════════ -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- flame -->
+    <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8.5 14.5A2.5 2.5 0 0 0 11 17c.92 0 1.74-.5 2.2-1.25C14.1 14.5 14 12 12 10c0 2-1.5 3-1.5 3S9 11.5 9 9c-2 1.5-2 4-2 4a3 3 0 0 0 1.5 1.5z"/>
+      <path d="M12 22c3.31 0 6-2.69 6-6 0-2.12-1.13-3.97-2.82-5-.48 1.27-1.6 2-2.18 2-.58 0-1.04-.46-1-1.04C12.05 10.46 11 9.5 11 9.5c0 2.5-2 3.5-2 5.5 0 2.76 1.34 5 3 5z"/>
+    </symbol>
+    <!-- certificate / award -->
+    <symbol id="icon-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="8" r="6"/>
+      <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+    </symbol>
+    <!-- fish / seafood -->
+    <symbol id="icon-fish" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6z"/>
+      <path d="M18 12h.01"/>
+      <path d="M6.5 12C4 12 2.5 13.5 2 16c1-1 2-1.5 3-1.5"/>
+    </symbol>
+    <!-- leaf / produce -->
+    <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+      <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+    </symbol>
+    <!-- clock -->
+    <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </symbol>
+    <!-- phone -->
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 12.04a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 2.98 1.38h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16l.92.92z"/>
+    </symbol>
+    <!-- mail -->
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+      <polyline points="22,6 12,13 2,6"/>
+    </symbol>
+    <!-- map pin -->
+    <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </symbol>
+    <!-- instagram -->
+    <symbol id="icon-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+    </symbol>
+    <!-- facebook -->
+    <symbol id="icon-facebook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </symbol>
+    <!-- tripadvisor owl / globe fallback -->
+    <symbol id="icon-tripadvisor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <circle cx="8.5" cy="12" r="2.5"/>
+      <circle cx="15.5" cy="12" r="2.5"/>
+      <path d="M5.5 8.5C6.5 7 9 6 12 6s5.5 1 6.5 2.5"/>
+    </symbol>
+    <!-- menu / burger icon -->
+    <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </symbol>
+    <!-- close icon -->
+    <symbol id="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </symbol>
+    <!-- check -->
+    <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"/>
+    </symbol>
+    <!-- star -->
+    <symbol id="icon-star" viewBox="0 0 24 24" stroke="none">
+      <polygon fill="currentColor" points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+    </symbol>
+    <!-- quote -->
+    <symbol id="icon-quote" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/>
+      <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/>
+    </symbol>
+    <!-- utensils -->
+    <symbol id="icon-utensils" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/>
+      <path d="M7 2v20"/>
+      <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/>
+    </symbol>
+  </svg>
+
+  <!-- ══ NAV ══════════════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#hero">
+        <img src="images/logo_trans.png" alt="Central Café" class="nav-logo-img" />
+        <div class="nav-logo-text">
+          <span class="logo-central">Central</span><span class="logo-cafe">Café</span>
+          <small>Restaurant &amp; Lounge Bar</small>
+        </div>
+      </a>
+      <button class="burger" id="burger" aria-label="Toggle menu">
+        <svg class="burger-icon burger-open"><use href="#icon-menu"/></svg>
+        <svg class="burger-icon burger-close" style="display:none"><use href="#icon-close"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#chef">Our Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reservation">Reserve</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a class="nav-cta" href="#reservation">Book a Table</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ═════════════════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Carvoeiro · Algarve · Portugal</p>
+      <h1>Where Every Bite<br /><em>Tells a Story</em></h1>
+      <p class="hero-sub">Flame-grilled steaks, fresh Atlantic seafood,<br />and soulful Portuguese flavours — open daily from 9am.</p>
+      <div class="hero-actions">
+        <a href="#reservation" class="btn btn-primary">Reserve Your Table</a>
+        <a href="#menu" class="btn btn-ghost">Explore the Menu</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+      <p>Scroll to discover</p>
+    </div>
+  </section>
+
+  <!-- ══ FEATURE STRIP ════════════════════════════════════════════ -->
+  <section class="badges">
+    <div class="container badges-grid">
+      <div class="badge-item">
+        <span class="badge-icon">
+          <svg><use href="#icon-flame"/></svg>
+        </span>
+        <strong>Flame Grilled</strong>
+        <p>Cooked over real fire for authentic char and flavour</p>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">
+          <svg><use href="#icon-award"/></svg>
+        </span>
+        <strong>Black Pig Certified</strong>
+        <p>Free-range Alentejo black pig — prized, premium cuts</p>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">
+          <svg><use href="#icon-fish"/></svg>
+        </span>
+        <strong>Fresh Atlantic Seafood</strong>
+        <p>Local catch served the day it arrives</p>
+      </div>
+      <div class="badge-item">
+        <span class="badge-icon">
+          <svg><use href="#icon-leaf"/></svg>
+        </span>
+        <strong>Local Produce</strong>
+        <p>Seasonal ingredients from trusted regional growers</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MENU PREVIEW ══════════════════════════════════════════════ -->
+  <section id="menu">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">What We Serve</p>
+        <h2>A Menu for Every Craving</h2>
+        <p class="section-sub">From a light couvert to a showstopping steak on the stone — there is something for everyone at Central Café.</p>
+      </div>
+
+      <div class="menu-tabs" role="tablist">
+        <button class="tab active" data-tab="starters" role="tab">Starters</button>
+        <button class="tab" data-tab="salads" role="tab">Salads</button>
+        <button class="tab" data-tab="burgers" role="tab">Burgers</button>
+        <button class="tab" data-tab="steakhouse" role="tab">Steakhouse</button>
+        <button class="tab" data-tab="stone" role="tab">Stone Experience</button>
+        <button class="tab" data-tab="blackpig" role="tab">Black Pig</button>
+      </div>
+
+      <div class="menu-panels">
+
+        <!-- STARTERS -->
+        <div class="menu-panel active" id="tab-starters">
+          <p class="panel-note">Couvert served with your choice of pepper, mushroom, blue cheese, BBQ or garlic mayonnaise sauce</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1549931319-a545dcf3bc7b?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Bread Basket</h4><span class="price">3.45€</span></div>
+                <p>Freshly baked bread served warm</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>King Prawns</h4><span class="price">17.90€</span></div>
+                <p>Fried with garlic, lemon wedges and house garlic mayonnaise</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1612361850789-81e3bd3a24f7?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Clams "Bulhão Pato"</h4><span class="price">19.90€</span></div>
+                <p>Cooked with garlic and white wine — a classic of Portugal</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Mussels "Natural"</h4><span class="price">15.90€</span></div>
+                <p>Garlic and white wine — simple, fresh, perfect</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Bruschetta</h4><span class="price">7.90€</span></div>
+                <p>Tomato and mozzarella on toasted bread</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1604383424843-81a4b716d99a?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top">
+                  <h4>Garlic Mushrooms</h4><span class="price">10.90€</span>
+                  <span class="tag veg">V</span>
+                </div>
+                <p>Pan-fried in garlic butter</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SALADS -->
+        <div class="menu-panel" id="tab-salads">
+          <p class="panel-note">Made with the freshest ingredients from our local producers</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Caesar</h4><span class="price">16.90€</span><span class="tag new">New</span></div>
+                <p>Chicken breast, poached egg, lettuce, croutons, house caesar dressing, parmesan</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Salmon</h4><span class="price">17.90€</span></div>
+                <p>Smoked salmon and avocado with a touch of lemon</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Prawn</h4><span class="price">18.90€</span></div>
+                <p>Flame grilled king-prawns with caramelised pineapple</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Bacon</h4><span class="price">13.75€</span></div>
+                <p>Flame grilled chicken breast with bacon and avocado</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Mozzarella</h4><span class="price">12.90€</span><span class="tag veg">V</span></div>
+                <p>Mozzarella, tomato and basil</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BURGERS -->
+        <div class="menu-panel" id="tab-burgers">
+          <p class="panel-note">Flame grilled day-aged beef burger — so simple and so delicious. All served with home-made chips.</p>
+          <div class="menu-grid">
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('images/20260417_164143_Instagram.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Special One</h4><span class="price">16.90€</span></div>
+                <p>100% beef, bacon, fried egg, cheese, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1550317138-10000687a72b?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Double</h4><span class="price">17.90€</span></div>
+                <p>100% beef x2, cheese, bacon, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Classic</h4><span class="price">13.90€</span></div>
+                <p>100% beef, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1606755962773-d324e0a13086?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Piri-Piri</h4><span class="price">15.90€</span></div>
+                <p>Chicken breast, cheese, piri-piri sauce, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Veggie</h4><span class="price">15.90€</span><span class="tag veg">V</span></div>
+                <p>100% vegetable burger, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1484723091739-30990ca35b2f?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Salmon</h4><span class="price">15.90€</span></div>
+                <p>Salmon, cream cheese, onion and tomato</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEAKHOUSE -->
+        <div class="menu-panel" id="tab-steakhouse">
+          <p class="panel-note">Tender hand-cut selections, served with home-made chips, a gourmet salad and a sauce. Choose from: pepper, mushroom, blue cheese, BBQ or garlic mayonnaise.</p>
+          <div class="menu-grid">
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Surf &amp; Turf</h4><span class="price">34.90€</span><span class="tag new">New</span></div>
+                <p>Flame grilled fillet and king prawns, with asparagus and home-made chips</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Rib Eye</h4><span class="price">23.90€</span></div>
+                <p>approx. 300g — flame grilled</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1594041680534-e8c8cdebd659?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>T-Bone</h4><span class="price">25.90€</span></div>
+                <p>approx. 400g — flame grilled</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Sirloin</h4><span class="price">21.90€</span></div>
+                <p>approx. 280g — flame grilled</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Fillet</h4><span class="price">27.90€</span></div>
+                <p>approx. 280g — flame grilled, the most tender cut</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STONE EXPERIENCE -->
+        <div class="menu-panel" id="tab-stone">
+          <p class="panel-note">All served with 3 sauces: pepper, mushroom and blue cheese — together with home-made chips and gourmet salad.</p>
+          <div class="menu-grid stone-grid">
+            <div class="stone-hero">
+              <div class="stone-hero-img"></div>
+              <div class="stone-hero-text">
+                <h3>Cook It Your Way</h3>
+                <p>Your steak arrives on a scorching volcanic stone at your table. You control the sear, the doneness, every bite. An interactive dining experience unlike any other.</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-body no-img">
+                <div class="menu-card-top"><h4>Rib Eye Steak</h4><span class="price">25.90€</span></div>
+                <p>approx. 300g</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-body no-img">
+                <div class="menu-card-top"><h4>T-Bone Steak</h4><span class="price">27.90€</span></div>
+                <p>approx. 400g</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-body no-img">
+                <div class="menu-card-top"><h4>Sirloin Steak</h4><span class="price">23.90€</span></div>
+                <p>approx. 280g</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-body no-img">
+                <div class="menu-card-top"><h4>Fillet Steak</h4><span class="price">29.90€</span></div>
+                <p>approx. 280g</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLACK PIG -->
+        <div class="menu-panel" id="tab-blackpig">
+          <p class="panel-note">Free range — famous for its juicy meat. Certified Alentejo Black Pig, served with home-made chips and a gourmet salad.</p>
+          <div class="menu-grid">
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('images/20260417_164004_Instagram.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tender Fillet</h4><span class="price">19.90€</span></div>
+                <p>approx. 230g — flame grilled with cream sauce and mushrooms</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1529074963764-6f42a4b3c8fb?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Secretos</h4><span class="price">18.90€</span></div>
+                <p>Flame grilled — highly prized, incredibly juicy hidden cut</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Rack of Ribs</h4><span class="price">18.90€</span></div>
+                <p>Flame grilled, served with BBQ sauce</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DISH SPOTLIGHT ══════════════════════════════════════════ -->
+  <section class="spotlight">
+    <div class="container spotlight-inner">
+      <div class="spotlight-img"></div>
+      <div class="spotlight-text">
+        <p class="section-eyebrow">Chef's Recommendation</p>
+        <h2>King Prawn Penne</h2>
+        <p>Atlantic king prawns tossed with penne pasta, wild rocket, cherry tomatoes and our signature house sauce — a plate that captures the soul of the Algarve coast in every forkful.</p>
+        <a href="#reservation" class="btn btn-primary">Reserve to Try It</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ OUR STORY ═══════════════════════════════════════════════ -->
+  <section id="chef">
+    <div class="container chef-inner">
+      <div class="chef-text">
+        <p class="section-eyebrow">Our Story</p>
+        <h2>Passion on a Plate,<br />Every Single Day</h2>
+        <p>Central Café was born from a simple belief: that great food, warm service, and beautiful surroundings can turn any meal into a memory. Nestled in the heart of Carvoeiro — one of the Algarve's most beloved coastal villages — we blend Portuguese tradition with international flair.</p>
+        <p>Our kitchen runs on locally sourced produce, certified free-range Black Pig, and Atlantic seafood delivered fresh daily. Every flame-grilled steak, every handcrafted burger, every plate of pasta carries the same commitment — the finest ingredients, treated with care.</p>
+        <p>Whether you're enjoying breakfast on the terrace or gathering with family over a long Sunday lunch, Central Café is your home away from home on the Algarve coast.</p>
+        <div class="chef-stats">
+          <div class="stat"><strong>40+</strong><span>Menu Items</span></div>
+          <div class="stat"><strong>09–00</strong><span>Open Daily</span></div>
+          <div class="stat"><strong>99+</strong><span>Reviews</span></div>
+        </div>
+      </div>
+      <div class="chef-image-wrap">
+        <div class="chef-image"></div>
+        <div class="chef-badge">
+          <svg width="22" height="22"><use href="#icon-award"/></svg>
+          <strong>Black Pig</strong>
+          <span>Certified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALLERY ════════════════════════════════════════════════ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">From Our Kitchen</p>
+        <h2>A Feast for the Eyes</h2>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <!-- col 1 – tall octopus anchors the left -->
+      <div class="gal-item gal-tall" style="background-image:url('images/20260417_164017_Instagram.jpg')"></div>
+      <!-- col 2-3 top row -->
+      <div class="gal-item" style="background-image:url('images/20260417_164143_Instagram.jpg')"></div>
+      <div class="gal-item" style="background-image:url('images/20260417_164124_Instagram.jpg')"></div>
+      <!-- col 4 -->
+      <div class="gal-item" style="background-image:url('images/0260417_164053_Instagram.jpg')"></div>
+      <!-- row 2 — wide pork shot spans 2 cols -->
+      <div class="gal-item gal-wide" style="background-image:url('images/20260417_164004_Instagram.jpg')"></div>
+      <div class="gal-item" style="background-image:url('images/143807-albums-8.jpg')"></div>
+      <!-- row 3 -->
+      <div class="gal-item" style="background-image:url('images/centralcare-ext-dark.jpg'); background-position: center top;"></div>
+      <div class="gal-item" style="background-image:url('images/20260417_164305_Instagram.jpg')"></div>
+      <div class="gal-item" style="background-image:url('images/143807-albums-7.jpg')"></div>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ═══════════════════════════════════════════ -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header light">
+        <p class="section-eyebrow">Guest Reviews</p>
+        <h2>What Our Guests Say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="stars">
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+            </div>
+            <svg class="quote-icon"><use href="#icon-quote"/></svg>
+          </div>
+          <p>"The steak on the stone was absolutely phenomenal. Cooking it ourselves at the table made it feel so special — and the three sauces were all incredible."</p>
+          <cite>Sarah M. — United Kingdom</cite>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="stars">
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+            </div>
+            <svg class="quote-icon"><use href="#icon-quote"/></svg>
+          </div>
+          <p>"We visit Carvoeiro every year and Central Café is always our first dinner. The Surf &amp; Turf and king prawn pasta are non-negotiable orders for our family."</p>
+          <cite>Markus &amp; Petra — Germany</cite>
+        </div>
+        <div class="testi-card">
+          <div class="testi-top">
+            <div class="stars">
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+              <svg><use href="#icon-star"/></svg>
+            </div>
+            <svg class="quote-icon"><use href="#icon-quote"/></svg>
+          </div>
+          <p>"The Black Pig secretos were genuinely the juiciest pork I have ever eaten. The staff were warm, attentive and made us feel so welcome from the moment we arrived."</p>
+          <cite>João F. — Lisbon</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ RESERVATION ════════════════════════════════════════════ -->
+  <section id="reservation">
+    <div class="container reservation-inner">
+      <div class="reservation-text">
+        <p class="section-eyebrow">Book a Table</p>
+        <h2>Reserve Your<br />Perfect Evening</h2>
+        <p>We look forward to welcoming you. Fill in the form and our team will confirm your reservation within a few hours.</p>
+        <ul class="res-info">
+          <li>
+            <span class="res-icon"><svg><use href="#icon-clock"/></svg></span>
+            <div><strong>Opening Hours</strong>Daily: 09:00 – 00:00 (Midnight)</div>
+          </li>
+          <li>
+            <span class="res-icon"><svg><use href="#icon-phone"/></svg></span>
+            <div><strong>Call Us</strong>+351 282 357 157</div>
+          </li>
+          <li>
+            <span class="res-icon"><svg><use href="#icon-pin"/></svg></span>
+            <div><strong>Address</strong>Estrada do Farol nº3 r/c, Carvoeiro 8400-505, Portugal</div>
+          </li>
+        </ul>
+      </div>
+      <form class="reservation-form" id="res-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Maria" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Silva" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="maria@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+351 912 345 678" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required />
+          </div>
+          <div class="form-group">
+            <label for="time">Time</label>
+            <select id="time" name="time" required>
+              <option value="" disabled selected>Select time</option>
+              <option>09:00</option><option>09:30</option>
+              <option>10:00</option><option>10:30</option>
+              <option>12:00</option><option>12:30</option>
+              <option>13:00</option><option>13:30</option>
+              <option>14:00</option><option>19:00</option>
+              <option>19:30</option><option>20:00</option>
+              <option>20:30</option><option>21:00</option>
+              <option>21:30</option><option>22:00</option>
+              <option>22:30</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="guests">Guests</label>
+            <select id="guests" name="guests" required>
+              <option value="" disabled selected>How many?</option>
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6</option>
+              <option>7</option><option>8+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Dietary requirements, special occasion, seating preference…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+        <div class="form-success" id="form-success" hidden>
+          <svg><use href="#icon-check"/></svg>
+          Thank you — we will confirm your reservation shortly.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ LOCATION ═══════════════════════════════════════════════ -->
+  <section id="location">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Find Us</p>
+        <h2>In the Heart of Carvoeiro</h2>
+        <p class="section-sub">Estrada do Farol, steps from the village centre and Carvoeiro beach — easy to find, impossible to forget.</p>
+      </div>
+    </div>
+    <div class="location-wrap">
+      <div class="map-container">
+        <iframe
+          title="Central Café Carvoeiro location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3148.06!2d-8.470184!3d37.096859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ab4ddf8bbbbbb%3A0x0!2sEstrada+do+Farol+3%2C+Carvoeiro%2C+Portugal!5e0!3m2!1sen!2spt!4v1700000000000"
+          width="100%" height="100%"
+          style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <div class="location-info">
+        <div class="loc-card">
+          <h3>Central <em class="cafe-green">Café</em></h3>
+          <p class="loc-subtitle">Restaurant &amp; Lounge Bar</p>
+          <ul class="loc-details">
+            <li>
+              <svg><use href="#icon-pin"/></svg>
+              <div>
+                <strong>Address</strong>
+                <span>Estrada do Farol nº3 r/c<br />Carvoeiro 8400-505, Portugal</span>
+              </div>
+            </li>
+            <li>
+              <svg><use href="#icon-phone"/></svg>
+              <div>
+                <strong>Phone</strong>
+                <span>+351 282 357 157</span>
+              </div>
+            </li>
+            <li>
+              <svg><use href="#icon-clock"/></svg>
+              <div>
+                <strong>Hours</strong>
+                <span>Open Daily — 09:00 to 00:00</span>
+              </div>
+            </li>
+            <li>
+              <svg><use href="#icon-utensils"/></svg>
+              <div>
+                <strong>Cuisine</strong>
+                <span>Portuguese · European · International</span>
+              </div>
+            </li>
+          </ul>
+          <a href="#reservation" class="btn btn-primary" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;">
+            Book a Table
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════════ -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-central">Central</span><span class="logo-cafe">Café</span>
+        <p>Restaurant &amp; Lounge Bar<br />Estrada do Farol nº3 r/c<br />Carvoeiro 8400-505, Algarve</p>
+        <p class="footer-contact">
+          <a href="tel:+351282357157">+351 282 357 157</a><br />
+          Open daily 09:00 – 00:00
+        </p>
+      </div>
+      <div class="footer-links">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#menu">Starters &amp; Couvert</a></li>
+          <li><a href="#menu">Salads</a></li>
+          <li><a href="#menu">Hamburgers</a></li>
+          <li><a href="#menu">Steakhouse</a></li>
+          <li><a href="#menu">Stone Experience</a></li>
+          <li><a href="#menu">Black Pig</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#chef">Our Story</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reservation">Reservations</a></li>
+          <li><a href="#location">Location &amp; Hours</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <svg><use href="#icon-instagram"/></svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg><use href="#icon-facebook"/></svg>
+          </a>
+          <a href="https://www.tripadvisor.com/Restaurant_Review-g189115-d17433763-Reviews-Central_Cafe_Carvoeiro-Carvoeiro_Faro_District_Algarve.html" target="_blank" rel="noopener" aria-label="TripAdvisor">
+            <svg><use href="#icon-tripadvisor"/></svg>
+          </a>
+        </div>
+        <div class="footer-rating">
+          <div class="rating-stars">
+            <svg><use href="#icon-star"/></svg>
+            <svg><use href="#icon-star"/></svg>
+            <svg><use href="#icon-star"/></svg>
+            <svg><use href="#icon-star"/></svg>
+          </div>
+          <p>99+ reviews on TripAdvisor</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Central Café Restaurant &amp; Lounge Bar · Carvoeiro, Algarve, Portugal · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
