@@ -284,7 +284,7 @@ svg { display: block; }
   box-shadow: 0 4px 20px var(--shadow); min-height: 280px;
 }
 .stone-hero-img {
-  background: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80') center/cover no-repeat;
+  background: url('images/stonesteak.png') center/cover no-repeat;
 }
 .stone-hero-text {
   background: var(--espresso); padding: 2.5rem 2.75rem;
