@@ -299,7 +299,7 @@ svg { display: block; }
 .spotlight { background: var(--espresso); overflow: hidden; }
 .spotlight-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
 .spotlight-img {
-  background: url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=900&q=85') center/cover no-repeat;
+  background: url('images/King\ Prawn\ Penne.jpg') center/cover no-repeat;
   min-height: 400px;
 }
 .spotlight-text {
