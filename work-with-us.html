@@ -777,7 +777,8 @@
       <!-- Application Form -->
       <div class="reveal">
         <!-- To enable real form submission, add: action="https://formspree.io/f/YOUR_ID" method="POST" -->
-        <form class="application-form" id="apply-form" novalidate>
+        <form class="application-form" id="apply-form" name="application" data-netlify="true" novalidate>
+          <input type="hidden" name="form-name" value="application" />
           <div class="form-success" id="form-success">
             <svg><use href="#icon-check"/></svg>
             <span class="t" data-en="Application sent! We'll be in touch within 48 hours." data-pt="Candidatura enviada! Entraremos em contacto em 48 horas.">Application sent! We'll be in touch within 48 hours.</span>
@@ -1004,12 +1005,19 @@
     });
     if (!valid) return;
 
-    /* Show success state (wire up a real action attr for production) */
-    success.classList.add('visible');
-    form.querySelectorAll('input, select, textarea, button[type="submit"]').forEach(function(el) {
-      el.disabled = true;
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(new FormData(form)).toString()
+    }).then(function() {
+      success.classList.add('visible');
+      form.querySelectorAll('input, select, textarea, button[type="submit"]').forEach(function(el) {
+        el.disabled = true;
+      });
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).catch(function() {
+      alert('Something went wrong. Please try again or contact us directly.');
     });
-    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 
   /* Re-style invalid fields on input */
