@@ -259,6 +259,14 @@ svg { display: block; }
 .menu-card.featured { outline: 2px solid var(--ember); outline-offset: -2px; }
 
 .menu-card-img { height: 195px; background-size: cover; background-position: center; }
+.menu-card-img.placeholder {
+  background: linear-gradient(135deg, var(--espresso) 0%, #3e2318 100%);
+  display: flex; align-items: center; justify-content: center;
+}
+.menu-card-img.placeholder::after {
+  content: "🍽";
+  font-size: 3rem; opacity: 0.25;
+}
 .menu-card-body { padding: 1.2rem 1.25rem 1.4rem; }
 .menu-card-body.no-img { padding: 1.5rem; }
 
@@ -285,6 +293,12 @@ svg { display: block; }
 }
 .stone-hero-img {
   background: url('images/stonesteak.png') center/cover no-repeat;
+  position: relative; overflow: hidden;
+}
+.stone-hero-img video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
 }
 .stone-hero-text {
   background: var(--espresso); padding: 2.5rem 2.75rem;
@@ -606,7 +620,7 @@ footer { background: var(--dark); padding: 4rem 0 0; }
   .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
 
   .stone-hero { grid-template-columns: 1fr; }
-  .stone-hero-img { min-height: 200px; }
+  .stone-hero-img { height: 260px; min-height: unset; }
 }
 
 @media (max-width: 520px) {
