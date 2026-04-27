@@ -83,6 +83,13 @@
       <line x1="18" y1="6" x2="6" y2="18"/>
       <line x1="6" y1="6" x2="18" y2="18"/>
     </symbol>
+    <!-- wi-fi -->
+    <symbol id="icon-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12.55a11 11 0 0 1 14.08 0"/>
+      <path d="M1.42 9a16 16 0 0 1 21.16 0"/>
+      <path d="M8.53 16.11a6 6 0 0 1 6.95 0"/>
+      <line x1="12" y1="20" x2="12.01" y2="20"/>
+    </symbol>
     <!-- check -->
     <symbol id="icon-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"/>
@@ -114,18 +121,44 @@
           <small>Restaurant &amp; Lounge Bar</small>
         </div>
       </a>
-      <button class="burger" id="burger" aria-label="Toggle menu">
-        <svg class="burger-icon burger-open"><use href="#icon-menu"/></svg>
-        <svg class="burger-icon burger-close" style="display:none"><use href="#icon-close"/></svg>
-      </button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#chef">Our Story</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#reservation">Reserve</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a class="nav-cta" href="#reservation">Book a Table</a></li>
+        <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+        <li><a href="#chef" data-i18n="nav.story">Our Story</a></li>
+        <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+        <li><a href="#reservation" data-i18n="nav.reserve">Reserve</a></li>
+        <li><a href="#location" data-i18n="nav.location">Location</a></li>
+        <li><a class="nav-cta" href="#reservation" data-i18n="nav.cta">Book a Table</a></li>
       </ul>
+      <div class="nav-controls">
+        <div class="lang-selector" id="lang-selector">
+          <button class="lang-selected" id="lang-toggle" aria-label="Select language" aria-expanded="false">
+            <img class="lang-flag" id="lang-flag-display" src="images/united-kingdom.png" alt="English flag">
+            <span id="lang-code-display">English</span>
+            <svg class="lang-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <ul class="lang-dropdown" role="listbox" id="lang-dropdown">
+            <li class="lang-option active" data-lang="en" role="option">
+              <img class="lang-flag" src="images/united-kingdom.png" alt="English"><span>English</span>
+            </li>
+            <li class="lang-option" data-lang="pt" role="option">
+              <img class="lang-flag" src="images/portugal.png" alt="Português"><span>Português</span>
+            </li>
+            <li class="lang-option" data-lang="es" role="option">
+              <img class="lang-flag" src="images/spain.png" alt="Español"><span>Español</span>
+            </li>
+            <li class="lang-option" data-lang="fr" role="option">
+              <img class="lang-flag" src="images/france.png" alt="Français"><span>Français</span>
+            </li>
+            <li class="lang-option" data-lang="de" role="option">
+              <img class="lang-flag" src="images/germany.png" alt="Deutsch"><span>Deutsch</span>
+            </li>
+          </ul>
+        </div>
+        <button class="burger" id="burger" aria-label="Toggle menu">
+          <svg class="burger-icon burger-open"><use href="#icon-menu"/></svg>
+          <svg class="burger-icon burger-close" style="display:none"><use href="#icon-close"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -134,16 +167,16 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow">Carvoeiro · Algarve · Portugal</p>
-      <h1>Where Every Bite<br /><em>Tells a Story</em></h1>
-      <p class="hero-sub">Flame-grilled steaks, fresh Atlantic seafood,<br />and soulful Portuguese flavours — open daily from 9am.</p>
+      <h1 data-i18n="hero.title">Where Every Bite<br /><em>Tells a Story</em></h1>
+      <p class="hero-sub" data-i18n="hero.sub">Flame-grilled steaks, fresh Atlantic seafood,<br />and soulful Portuguese flavours — open daily from 9am.</p>
       <div class="hero-actions">
-        <a href="#reservation" class="btn btn-primary">Reserve Your Table</a>
-        <a href="#menu" class="btn btn-ghost">Explore the Menu</a>
+        <a href="#reservation" class="btn btn-primary" data-i18n="hero.cta1">Reserve Your Table</a>
+        <a href="#menu" class="btn btn-ghost" data-i18n="hero.cta2">Explore the Menu</a>
       </div>
     </div>
     <div class="hero-scroll-hint">
       <span class="scroll-line"></span>
-      <p>Scroll to discover</p>
+      <p data-i18n="hero.scroll">Scroll to discover</p>
     </div>
   </section>
 
@@ -154,29 +187,29 @@
         <span class="badge-icon">
           <svg><use href="#icon-flame"/></svg>
         </span>
-        <strong>Flame Grilled</strong>
-        <p>Cooked over real fire for authentic char and flavour</p>
+        <strong data-i18n="badge.flame.title">Flame Grilled</strong>
+        <p data-i18n="badge.flame.desc">Cooked over real fire for authentic char and flavour</p>
       </div>
       <div class="badge-item">
         <span class="badge-icon">
           <svg><use href="#icon-award"/></svg>
         </span>
-        <strong>Black Pig Certified</strong>
-        <p>Free-range Alentejo black pig — prized, premium cuts</p>
+        <strong data-i18n="badge.pig.title">Black Pig Certified</strong>
+        <p data-i18n="badge.pig.desc">Free-range Alentejo black pig — prized, premium cuts</p>
       </div>
       <div class="badge-item">
         <span class="badge-icon">
           <svg><use href="#icon-fish"/></svg>
         </span>
-        <strong>Fresh Atlantic Seafood</strong>
-        <p>Local catch served the day it arrives</p>
+        <strong data-i18n="badge.seafood.title">Fresh Atlantic Seafood</strong>
+        <p data-i18n="badge.seafood.desc">Local catch served the day it arrives</p>
       </div>
       <div class="badge-item">
         <span class="badge-icon">
           <svg><use href="#icon-leaf"/></svg>
         </span>
-        <strong>Local Produce</strong>
-        <p>Seasonal ingredients from trusted regional growers</p>
+        <strong data-i18n="badge.produce.title">Local Produce</strong>
+        <p data-i18n="badge.produce.desc">Seasonal ingredients from trusted regional growers</p>
       </div>
     </div>
   </section>
@@ -185,43 +218,106 @@
   <section id="menu">
     <div class="container">
       <div class="section-header">
-        <p class="section-eyebrow">What We Serve</p>
-        <h2>A Menu for Every Craving</h2>
-        <p class="section-sub">From a light couvert to a showstopping steak on the stone — there is something for everyone at Central Café.</p>
+        <p class="section-eyebrow" data-i18n="menu.eyebrow">What We Serve</p>
+        <h2 data-i18n="menu.title">A Menu for Every Craving</h2>
+        <p class="section-sub" data-i18n="menu.sub">From a light couvert to a showstopping steak on the stone — there is something for everyone at Central Café.</p>
       </div>
 
       <div class="menu-tabs" role="tablist">
-        <button class="tab active" data-tab="starters" role="tab">Starters</button>
-        <button class="tab" data-tab="salads" role="tab">Salads</button>
-        <button class="tab" data-tab="burgers" role="tab">Burgers</button>
-        <button class="tab" data-tab="steakhouse" role="tab">Steakhouse</button>
-        <button class="tab" data-tab="stone" role="tab">Stone Experience</button>
-        <button class="tab" data-tab="blackpig" role="tab">Black Pig</button>
-        <button class="tab" data-tab="fish" role="tab">Grilled Fish</button>
-        <button class="tab" data-tab="specialties" role="tab">Specialties</button>
-        <button class="tab" data-tab="sides" role="tab">Sides &amp; Sauces</button>
-        <button class="tab" data-tab="kids" role="tab">Kids</button>
-        <button class="tab" data-tab="breakfast" role="tab">Breakfast</button>
+        <button class="tab active" data-tab="starters" role="tab" data-i18n="tab.starters">Starters</button>
+        <button class="tab" data-tab="salads" role="tab" data-i18n="tab.salads">Salads</button>
+        <button class="tab" data-tab="burgers" role="tab" data-i18n="tab.burgers">Burgers</button>
+        <button class="tab" data-tab="steakhouse" role="tab" data-i18n="tab.steakhouse">Steakhouse</button>
+        <button class="tab" data-tab="stone" role="tab" data-i18n="tab.stone">Stone Experience</button>
+        <button class="tab" data-tab="blackpig" role="tab" data-i18n="tab.blackpig">Black Pig</button>
+        <button class="tab" data-tab="fish" role="tab" data-i18n="tab.fish">Grilled Fish</button>
+        <button class="tab" data-tab="specialties" role="tab" data-i18n="tab.specialties">Specialties</button>
+        <button class="tab" data-tab="sides" role="tab" data-i18n="tab.sides">Sides &amp; Sauces</button>
+        <button class="tab" data-tab="kids" role="tab" data-i18n="tab.kids">Kids</button>
+        <button class="tab" data-tab="wraps" role="tab" data-i18n="tab.wraps">Wraps</button>
+        <button class="tab" data-tab="baguettes" role="tab" data-i18n="tab.baguettes">Baguettes</button>
+        <button class="tab" data-tab="pizzas" role="tab" data-i18n="tab.pizzas">Pizzas</button>
+        <button class="tab" data-tab="pastas" role="tab" data-i18n="tab.pastas">Pastas</button>
+        <button class="tab" data-tab="chicken" role="tab" data-i18n="tab.chicken">Chicken</button>
+        <button class="tab" data-tab="kebabs" role="tab" data-i18n="tab.kebabs">Kebabs</button>
+        <button class="tab" data-tab="breakfast" role="tab" data-i18n="tab.breakfast">Breakfast</button>
       </div>
 
       <div class="menu-panels">
 
         <!-- STARTERS -->
         <div class="menu-panel active" id="tab-starters">
-          <p class="panel-note">Couvert served with your choice of pepper, mushroom, blue cheese, BBQ or garlic mayonnaise sauce</p>
+          <p class="panel-note" data-i18n="panel.starters">Couvert served with your choice of pepper, mushroom, blue cheese, BBQ or garlic mayonnaise sauce</p>
           <div class="menu-grid">
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/bread.png')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Bread Basket</h4><span class="price">3.45€</span></div>
+                <div class="menu-card-top"><h4>Bread Basket</h4><span class="price">3.50€</span></div>
                 <p>Freshly baked bread served warm</p>
+              </div>
+            </div>
+            
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/Marinated\ Olives.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Marinated Olives</h4><span class="price">3.00€</span></div>
+                <p>House marinated olives</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Sardine Pâté</h4><span class="price">2.00€</span></div>
+                <p>Per item</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Sheep's Cheese</h4><span class="price">5.00€</span></div>
+                <p>Per item</p>
+              </div>
+            </div>
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('images/bread.png')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Couvert Platter</h4><span class="price">14.00€</span></div>
+                <p>Bread basket, butter, marinated olives, sardine pâté and sheep's cheese — everything included</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Soup of the Day</h4><span class="price">5.00€</span><span class="tag veg">V</span></div>
+                <p>Homemade — ask your server for today's selection</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/Bruschetta.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tomato &amp; Mozzarella Bruschetta</h4><span class="price">8.00€</span></div>
+                <p>Tomato and mozzarella on toasted bread</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/garlic_bread.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Garlic Bread with Cheese</h4><span class="price">6.50€</span></div>
+                <p>Toasted bread with garlic butter and melted cheese</p>
               </div>
             </div>
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>King Prawns</h4><span class="price">17.90€</span></div>
+                <div class="menu-card-top"><h4>Garlic Prawns</h4><span class="price">19.00€</span></div>
                 <p>Fried with garlic, lemon wedges and house garlic mayonnaise</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/King\ Prawns\ in\ Tempura.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>King Prawns in Tempura</h4><span class="price">20.00€</span></div>
+                <p>5 items — crispy tempura battered king prawns</p>
               </div>
             </div>
             <div class="menu-card">
@@ -239,10 +335,24 @@
               </div>
             </div>
             <div class="menu-card">
-              <div class="menu-card-img" style="background-image:url('images/Bruschetta.jpg')"></div>
+              <div class="menu-card-img" style="background-image:url('images/bbq-fried-chicken-wings.jpg')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Bruschetta</h4><span class="price">7.90€</span></div>
-                <p>Tomato and mozzarella on toasted bread</p>
+                <div class="menu-card-top"><h4>Fried Chicken Wings</h4><span class="price">11.00€</span></div>
+                <p>6 items, with BBQ dip</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/Flame-Chourico.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Flame Chouriço</h4><span class="price">13.00€</span></div>
+                <p>Traditional Portuguese cured sausage, flamed at the table</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Ham &amp; Cheese Board</h4><span class="price">14.00€</span></div>
+                <p>Selection of smoked ham and cheese</p>
               </div>
             </div>
             <div class="menu-card">
@@ -260,33 +370,27 @@
 
         <!-- SALADS -->
         <div class="menu-panel" id="tab-salads">
-          <p class="panel-note">Made with the freshest ingredients from our local producers</p>
+          <p class="panel-note" data-i18n="panel.salads">Made with the freshest ingredients from our local producers</p>
           <div class="menu-grid">
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&q=80')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Caesar</h4><span class="price">16.90€</span><span class="tag new">New</span></div>
+                <div class="menu-card-top"><h4>Caesar</h4><span class="price">16.90€</span><span class="tag new" data-i18n="tag.new">New</span></div>
                 <p>Chicken breast, poached egg, lettuce, croutons, house caesar dressing, parmesan</p>
               </div>
             </div>
             <div class="menu-card">
-              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&q=80')"></div>
+              <div class="menu-card-img" style="background-image:url('images/salmon-salad.jpg')"></div>
               <div class="menu-card-body">
                 <div class="menu-card-top"><h4>Salmon</h4><span class="price">17.90€</span></div>
                 <p>Smoked salmon and avocado with a touch of lemon</p>
               </div>
             </div>
+
             <div class="menu-card">
-              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80')"></div>
+              <div class="menu-card-img" style="background-image:url('images/grill-chicken-salad.jpg')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Prawn</h4><span class="price">18.90€</span></div>
-                <p>Flame grilled king-prawns with caramelised pineapple</p>
-              </div>
-            </div>
-            <div class="menu-card">
-              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=400&q=80')"></div>
-              <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Bacon</h4><span class="price">13.75€</span></div>
+                <div class="menu-card-top"><h4>Chicken</h4><span class="price">13.75€</span></div>
                 <p>Flame grilled chicken breast with bacon and avocado</p>
               </div>
             </div>
@@ -302,7 +406,7 @@
 
         <!-- BURGERS -->
         <div class="menu-panel" id="tab-burgers">
-          <p class="panel-note">Flame grilled day-aged beef burger — so simple and so delicious. All served with home-made chips.</p>
+          <p class="panel-note" data-i18n="panel.burgers">Flame grilled day-aged beef burger — so simple and so delicious. All served with home-made chips.</p>
           <div class="menu-grid">
             <div class="menu-card featured">
               <div class="menu-card-img" style="background-image:url('images/20260417_164143_Instagram.jpg')"></div>
@@ -321,8 +425,22 @@
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&q=80')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Classic</h4><span class="price">13.90€</span></div>
-                <p>100% beef, tomato and onion</p>
+                <div class="menu-card-top"><h4>Classic</h4><span class="price">14.00€</span></div>
+                <p>100% beef, lettuce, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Cheese Burger</h4><span class="price">15.00€</span></div>
+                <p>100% beef, cheese, lettuce, tomato and onion</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Fried Onion Burger</h4><span class="price">16.00€</span></div>
+                <p>100% beef, cheese, soft fried onion and tomato</p>
               </div>
             </div>
             <div class="menu-card">
@@ -351,12 +469,12 @@
 
         <!-- STEAKHOUSE -->
         <div class="menu-panel" id="tab-steakhouse">
-          <p class="panel-note">Tender hand-cut selections, served with home-made chips, a gourmet salad and a sauce. Choose from: pepper, mushroom, blue cheese, BBQ or garlic mayonnaise.</p>
+          <p class="panel-note" data-i18n="panel.steakhouse">Tender hand-cut selections, served with home-made chips, a gourmet salad and a sauce. Choose from: pepper, mushroom, blue cheese, BBQ or garlic mayonnaise.</p>
           <div class="menu-grid">
             <div class="menu-card featured">
-              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1558030006-450675393462?w=400&q=80')"></div>
+              <div class="menu-card-img" style="background-image:url('images/surf-turf.jpg')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Surf &amp; Turf</h4><span class="price">34.90€</span><span class="tag new">New</span></div>
+                <div class="menu-card-top"><h4>Surf &amp; Turf</h4><span class="price">34.90€</span><span class="tag new" data-i18n="tag.new">New</span></div>
                 <p>Flame grilled fillet and king prawns, with asparagus and home-made chips</p>
               </div>
             </div>
@@ -384,8 +502,15 @@
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/Fillet.jpg')"></div>
               <div class="menu-card-body">
-                <div class="menu-card-top"><h4>Fillet</h4><span class="price">27.90€</span></div>
+                <div class="menu-card-top"><h4>Fillet</h4><span class="price">29.00€</span></div>
                 <p>approx. 280g — flame grilled, the most tender cut</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Pepper Steak</h4><span class="price">26.00€</span></div>
+                <p>Sirloin with creamy pepper sauce, served with sautéed vegetables &amp; gratin potatoes</p>
               </div>
             </div>
           </div>
@@ -393,7 +518,7 @@
 
         <!-- STONE EXPERIENCE -->
         <div class="menu-panel" id="tab-stone">
-          <p class="panel-note">All served with 3 sauces: pepper, mushroom and blue cheese — together with home-made chips and gourmet salad.</p>
+          <p class="panel-note" data-i18n="panel.stone">All served with 3 sauces: pepper, mushroom and blue cheese — together with home-made chips and gourmet salad.</p>
           <div class="menu-grid stone-grid">
             <div class="stone-hero">
               <div class="stone-hero-img">
@@ -402,8 +527,8 @@
                 </video>
               </div>
               <div class="stone-hero-text">
-                <h3>Cook It Your Way</h3>
-                <p>Your steak arrives on a scorching volcanic stone at your table. You control the sear, the doneness, every bite. An interactive dining experience unlike any other.</p>
+                <h3 data-i18n="stone.title">Cook It Your Way</h3>
+                <p data-i18n="stone.desc">Your steak arrives on a scorching volcanic stone at your table. You control the sear, the doneness, every bite. An interactive dining experience unlike any other.</p>
               </div>
             </div>
             <div class="menu-card">
@@ -439,7 +564,7 @@
 
         <!-- BLACK PIG -->
         <div class="menu-panel" id="tab-blackpig">
-          <p class="panel-note">Free range — famous for its juicy meat. Certified Alentejo Black Pig, served with home-made chips and a gourmet salad.</p>
+          <p class="panel-note" data-i18n="panel.blackpig">Free range — famous for its juicy meat. Certified Alentejo Black Pig, served with home-made chips and a gourmet salad.</p>
           <div class="menu-grid">
             <div class="menu-card featured">
               <div class="menu-card-img" style="background-image:url('images/20260417_164004_Instagram.jpg')"></div>
@@ -467,7 +592,7 @@
 
         <!-- GRILLED FISH -->
         <div class="menu-panel" id="tab-fish">
-          <p class="panel-note">Flame grilled, served with mixed boiled vegetables and potato. May contain fish bones.</p>
+          <p class="panel-note" data-i18n="panel.fish">Flame grilled, served with mixed boiled vegetables and potato. May contain fish bones.</p>
           <div class="menu-grid">
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/sardinesv2.jpg')"></div>
@@ -511,12 +636,40 @@
                 <p>Steak</p>
               </div>
             </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Fish Cataplana</h4><span class="price">22.00€</span></div>
+                <p>Traditional Portuguese clay-pot fish stew</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Seafood Cataplana</h4><span class="price">24.00€</span></div>
+                <p>Traditional Portuguese clay-pot seafood stew</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1547592166-23ac45744acd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Mussels Cataplana</h4><span class="price">18.00€</span></div>
+                <p>Mussels in a traditional Portuguese clay-pot</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/Vegetarian\ Cataplana.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Vegetarian Cataplana</h4><span class="price">17.00€</span><span class="tag veg">V</span></div>
+                <p>Seasonal vegetables in a traditional Portuguese clay-pot</p>
+              </div>
+            </div>
           </div>
         </div>
 
         <!-- HOUSE SPECIALTIES -->
         <div class="menu-panel" id="tab-specialties">
-          <p class="panel-note">Our chefs' proudest plates — classic Portuguese flavours with a Central Café twist.</p>
+          <p class="panel-note" data-i18n="panel.specialties">Our chefs' proudest plates — classic Portuguese flavours with a Central Café twist.</p>
           <div class="menu-grid">
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/tuna-steak.jpg')"></div>
@@ -544,8 +697,15 @@
 
         <!-- SIDES & SAUCES -->
         <div class="menu-panel" id="tab-sides">
-          <p class="panel-note">All freshly prepared when you order.</p>
+          <p class="panel-note" data-i18n="panel.sides">All freshly prepared when you order.</p>
           <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Sautéed Vegetables</h4><span class="price">6.00€</span><span class="tag veg">V</span></div>
+                <p>Seasonal vegetables sautéed to order</p>
+              </div>
+            </div>
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/sauces.jpg')"></div>
               <div class="menu-card-body">
@@ -600,7 +760,7 @@
 
         <!-- KIDS -->
         <div class="menu-panel" id="tab-kids">
-          <p class="panel-note">Little ones deserve great food too — all freshly made, just smaller.</p>
+          <p class="panel-note" data-i18n="panel.kids">Little ones deserve great food too — all freshly made, just smaller.</p>
           <div class="menu-grid">
             <div class="menu-card">
               <div class="menu-card-img" style="background-image:url('images/fish-fingers.jpg')"></div>
@@ -647,9 +807,254 @@
           </div>
         </div>
 
+        <!-- WRAPS -->
+        <div class="menu-panel" id="tab-wraps">
+          <p class="panel-note" data-i18n="panel.wraps">Served at lunch only — fresh fillings in a soft flour wrap.</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Mozzarella &amp; Fresh Basil</h4><span class="price">10.00€</span><span class="tag veg">V</span></div>
+                <p>Mozzarella and fresh basil</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/salmon_sandwich.png')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Salmon</h4><span class="price">13.00€</span></div>
+                <p>Cream cheese, rocket leaves and a squeeze of lemon</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Ham</h4><span class="price">10.00€</span></div>
+                <p>Cheese, sun-dried tomatoes and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tuna</h4><span class="price">11.00€</span></div>
+                <p>Onion, tomato, sweetcorn and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/Grilled\ Chicken\ Breast\ wrap.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Grilled Chicken Breast</h4><span class="price">12.00€</span></div>
+                <p>Fried onions, tomato and rocket leaves</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGUETTES -->
+        <div class="menu-panel" id="tab-baguettes">
+          <p class="panel-note" data-i18n="panel.baguettes">Rustic French baguette sandwiches — generous fillings, great flavour.</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Ham</h4><span class="price">12.00€</span></div>
+                <p>Fresh cheese, sun-dried tomato and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Grilled Chicken Breast</h4><span class="price">12.00€</span></div>
+                <p>Bacon, fried onions, roast peppers and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/salmon_sandwich.png')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Salmon</h4><span class="price">14.00€</span></div>
+                <p>Cream cheese, rocket leaves and a touch of lemon</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tuna</h4><span class="price">12.00€</span></div>
+                <p>Onion, tomato, boiled egg and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Prawn Cocktail</h4><span class="price">14.00€</span></div>
+                <p>Avocado, tomato and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1509722747041-616f39b57569?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>BLT</h4><span class="price">11.00€</span></div>
+                <p>Bacon, lettuce and tomato</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIZZAS -->
+        <div class="menu-panel" id="tab-pizzas">
+          <p class="panel-note" data-i18n="panel.pizzas">Stone-baked pizzas made fresh to order.</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Margherita</h4><span class="price">15.00€</span><span class="tag veg">V</span></div>
+                <p>Tomato, mozzarella di bufala and fresh basil</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Pepperoni</h4><span class="price">17.00€</span></div>
+                <p>Cheese, tomato, bell peppers and olives</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Vegetarian</h4><span class="price">16.00€</span><span class="tag veg">V</span></div>
+                <p>Cheese and tomato, grilled bell peppers, sweetcorn, rocket leaves and cherry tomatoes</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Smoked Ham</h4><span class="price">18.00€</span></div>
+                <p>Cheese and tomato, smoked ham, roast peppers and olives</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tuna</h4><span class="price">16.00€</span></div>
+                <p>Tomato, cheese, onion, sweetcorn and olives</p>
+              </div>
+            </div>
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Central Café</h4><span class="price">17.00€</span></div>
+                <p>Cheese, onion, tomato, chorizo, olives and wild oregano</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1628840042765-356cda07504e?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Piri-piri</h4><span class="price">16.00€</span></div>
+                <p>Tomato, cheese, chicken, peppers and piri-piri</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASTAS -->
+        <div class="menu-panel" id="tab-pastas">
+          <p class="panel-note" data-i18n="panel.pastas">Homemade pasta dishes — fresh ingredients, classic recipes.</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/kid\ size\ Spaghetti\ Bolognese.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Spaghetti Bolognese</h4><span class="price">16.00€</span></div>
+                <p>Homemade in-house with 100% beef</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1612874742237-6526221588e3?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Spaghetti Carbonara</h4><span class="price">17.00€</span></div>
+                <p>Parmesan cheese, eggs and bacon</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Ravioli al Pesto</h4><span class="price">15.00€</span><span class="tag veg">V</span></div>
+                <p>Green pesto sauce</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Tagliatelle Funghi</h4><span class="price">17.00€</span></div>
+                <p>Mushrooms, ham and cream</p>
+              </div>
+            </div>
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Penne del Mare</h4><span class="price">20.00€</span></div>
+                <p>Prawns, cherry tomatoes, olives and rocket leaves</p>
+              </div>
+            </div>
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Nero Spaghetti Gamberetti</h4><span class="price">21.00€</span></div>
+                <p>King prawns, cherry tomato and piri-piri</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CHICKEN -->
+        <div class="menu-panel" id="tab-chicken">
+          <p class="panel-note" data-i18n="panel.chicken">Flame grilled chicken — served with homemade chips.</p>
+          <div class="menu-grid">
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('images/chicken-piri-piri.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Piri-piri</h4><span class="price">15.00€</span></div>
+                <p>½ chicken on the bone, marinated and flame grilled, served with homemade chips</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Breast Flame Grilled</h4><span class="price">16.00€</span></div>
+                <p>Served with homemade chips and salad</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- KEBABS -->
+        <div class="menu-panel" id="tab-kebabs">
+          <p class="panel-note" data-i18n="panel.kebabs">Made in-house and flame grilled — served with salad and gratin potatoes.</p>
+          <div class="menu-grid">
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Kebab</h4><span class="price">20.00€</span></div>
+                <p>Made in-house and flame grilled, served with salad and gratin potatoes</p>
+              </div>
+            </div>
+            <div class="menu-card">
+              <div class="menu-card-img" style="background-image:url('images/chicken_King\ Prawn\ Kebab.jpg')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken &amp; King Prawn Kebab</h4><span class="price">24.00€</span></div>
+                <p>Made in-house and flame grilled, served with salad and gratin potatoes</p>
+              </div>
+            </div>
+            <div class="menu-card featured">
+              <div class="menu-card-img" style="background-image:url('https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&q=80')"></div>
+              <div class="menu-card-body">
+                <div class="menu-card-top"><h4>Chicken Satay Kebab</h4><span class="price">23.00€</span></div>
+                <p>With creamy homemade peanut sauce, served with salad and gratin potatoes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- BREAKFAST -->
         <div class="menu-panel" id="tab-breakfast">
-          <p class="panel-note">Served daily from 9am — the perfect start to your Algarve morning.</p>
+          <p class="panel-note" data-i18n="panel.breakfast">Served daily from 9am — the perfect start to your Algarve morning.</p>
           <div class="menu-grid">
             <div class="menu-card featured">
               <div class="menu-card-img" style="background-image:url('images/english-breakfast.jpg')"></div>
@@ -670,10 +1075,10 @@
     <div class="container spotlight-inner">
       <div class="spotlight-img"></div>
       <div class="spotlight-text">
-        <p class="section-eyebrow">Chef's Recommendation</p>
-        <h2>King Prawn Penne</h2>
-        <p>Atlantic king prawns tossed with penne pasta, wild rocket, cherry tomatoes and our signature house sauce — a plate that captures the soul of the Algarve coast in every forkful.</p>
-        <a href="#reservation" class="btn btn-primary">Reserve to Try It</a>
+        <p class="section-eyebrow" data-i18n="spot.eyebrow">Chef's Recommendation</p>
+        <h2 data-i18n="spot.title">King Prawn Penne</h2>
+        <p data-i18n="spot.desc">Atlantic king prawns tossed with penne pasta, wild rocket, cherry tomatoes and our signature house sauce — a plate that captures the soul of the Algarve coast in every forkful.</p>
+        <a href="#reservation" class="btn btn-primary" data-i18n="spot.cta">Reserve to Try It</a>
       </div>
     </div>
   </section>
@@ -682,23 +1087,23 @@
   <section id="chef">
     <div class="container chef-inner">
       <div class="chef-text">
-        <p class="section-eyebrow">Our Story</p>
-        <h2>Passion on a Plate,<br />Every Single Day</h2>
-        <p>Central Café was born from a simple belief: that great food, warm service, and beautiful surroundings can turn any meal into a memory. Nestled in the heart of Carvoeiro — one of the Algarve's most beloved coastal villages — we blend Portuguese tradition with international flair.</p>
-        <p>Our kitchen runs on locally sourced produce, certified free-range Black Pig, and Atlantic seafood delivered fresh daily. Every flame-grilled steak, every handcrafted burger, every plate of pasta carries the same commitment — the finest ingredients, treated with care.</p>
-        <p>Whether you're enjoying breakfast on the terrace or gathering with family over a long Sunday lunch, Central Café is your home away from home on the Algarve coast.</p>
+        <p class="section-eyebrow" data-i18n="story.eyebrow">Our Story</p>
+        <h2 data-i18n="story.title">Passion on a Plate,<br />Every Single Day</h2>
+        <p data-i18n="story.p1">Central Café was born from a simple belief: that great food, warm service, and beautiful surroundings can turn any meal into a memory. Nestled in the heart of Carvoeiro — one of the Algarve's most beloved coastal villages — we blend Portuguese tradition with international flair.</p>
+        <p data-i18n="story.p2">Our kitchen runs on locally sourced produce, certified free-range Black Pig, and Atlantic seafood delivered fresh daily. Every flame-grilled steak, every handcrafted burger, every plate of pasta carries the same commitment — the finest ingredients, treated with care.</p>
+        <p data-i18n="story.p3">Whether you're enjoying breakfast on the terrace or gathering with family over a long Sunday lunch, Central Café is your home away from home on the Algarve coast.</p>
         <div class="chef-stats">
-          <div class="stat"><strong>40+</strong><span>Menu Items</span></div>
-          <div class="stat"><strong>09–23</strong><span>Open Daily</span></div>
-          <div class="stat"><strong>99+</strong><span>Reviews</span></div>
+          <div class="stat"><strong>40+</strong><span data-i18n="story.stat1">Menu Items</span></div>
+          <div class="stat"><strong>09–23</strong><span data-i18n="story.stat2">Open Daily</span></div>
+          <div class="stat"><strong>99+</strong><span data-i18n="story.stat3">Reviews</span></div>
         </div>
       </div>
       <div class="chef-image-wrap">
         <div class="chef-image"></div>
         <div class="chef-badge">
           <svg width="22" height="22"><use href="#icon-award"/></svg>
-          <strong>Black Pig</strong>
-          <span>Certified</span>
+          <strong data-i18n="badge.blackpig">Black Pig</strong>
+          <span data-i18n="badge.certified">Certified</span>
         </div>
       </div>
     </div>
@@ -708,8 +1113,8 @@
   <section id="gallery">
     <div class="container">
       <div class="section-header">
-        <p class="section-eyebrow">From Our Kitchen</p>
-        <h2>A Feast for the Eyes</h2>
+        <p class="section-eyebrow" data-i18n="gallery.eyebrow">From Our Kitchen</p>
+        <h2 data-i18n="gallery.title">A Feast for the Eyes</h2>
       </div>
     </div>
     <div class="gallery-grid">
@@ -735,8 +1140,8 @@
   <section class="testimonials">
     <div class="container">
       <div class="section-header light">
-        <p class="section-eyebrow">Guest Reviews</p>
-        <h2>What Our Guests Say</h2>
+        <p class="section-eyebrow" data-i18n="testi.eyebrow">Guest Reviews</p>
+        <h2 data-i18n="testi.title">What Our Guests Say</h2>
       </div>
       <div class="testi-grid">
         <div class="testi-card">
@@ -789,21 +1194,21 @@
   <section id="reservation">
     <div class="container reservation-inner">
       <div class="reservation-text">
-        <p class="section-eyebrow">Book a Table</p>
-        <h2>Reserve Your<br />Perfect Evening</h2>
-        <p>We look forward to welcoming you. Fill in the form and our team will confirm your reservation within a few hours.</p>
+        <p class="section-eyebrow" data-i18n="res.eyebrow">Book a Table</p>
+        <h2 data-i18n="res.title">Reserve Your<br />Perfect Evening</h2>
+        <p data-i18n="res.desc">We look forward to welcoming you. Fill in the form and our team will confirm your reservation within a few hours.</p>
         <ul class="res-info">
           <li>
             <span class="res-icon"><svg><use href="#icon-clock"/></svg></span>
-            <div><strong>Opening Hours</strong>Daily: 09:00 – 23:00</div>
+            <div><strong data-i18n="res.hours.title">Opening Hours</strong>Daily: 09:00 – 23:00</div>
           </li>
           <li>
             <span class="res-icon"><svg><use href="#icon-phone"/></svg></span>
-            <div><strong>Call Us</strong>+351 282 357 157</div>
+            <div><strong data-i18n="res.phone.title">Call Us</strong>+351 282 357 157</div>
           </li>
           <li>
             <span class="res-icon"><svg><use href="#icon-pin"/></svg></span>
-            <div><strong>Address</strong>Estrada do Farol nº3 r/c, Carvoeiro 8400-505, Portugal</div>
+            <div><strong data-i18n="res.addr.title">Address</strong>Estrada do Farol nº3 r/c, Carvoeiro 8400-505, Portugal</div>
           </li>
         </ul>
       </div>
@@ -811,33 +1216,33 @@
         <input type="hidden" name="form-name" value="reservation" />
         <div class="form-row">
           <div class="form-group">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Maria" required />
+            <label for="fname" data-i18n="form.fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="Maria" data-i18n-ph="ph.fname" required />
           </div>
           <div class="form-group">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Silva" required />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="maria@example.com" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="+351 912 345 678" />
+            <label for="lname" data-i18n="form.lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="Silva" data-i18n-ph="ph.lname" required />
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label for="date">Date</label>
+            <label for="email" data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email" placeholder="maria@example.com" data-i18n-ph="ph.email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone" data-i18n="form.phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+351 912 345 678" data-i18n-ph="ph.phone" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date" data-i18n="form.date">Date</label>
             <input type="date" id="date" name="date" required />
           </div>
           <div class="form-group">
-            <label for="time">Time</label>
+            <label for="time" data-i18n="form.time">Time</label>
             <select id="time" name="time" required>
-              <option value="" disabled selected>Select time</option>
+              <option value="" disabled selected data-i18n="sel.time">Select time</option>
               <option>09:00</option><option>09:30</option>
               <option>10:00</option><option>10:30</option>
               <option>12:00</option><option>12:30</option>
@@ -850,9 +1255,9 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="guests">Guests</label>
+            <label for="guests" data-i18n="form.guests">Guests</label>
             <select id="guests" name="guests" required>
-              <option value="" disabled selected>How many?</option>
+              <option value="" disabled selected data-i18n="sel.guests">How many?</option>
               <option>1</option><option>2</option><option>3</option>
               <option>4</option><option>5</option><option>6</option>
               <option>7</option><option>8+</option>
@@ -860,13 +1265,13 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="notes">Special Requests</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Dietary requirements, special occasion, seating preference…"></textarea>
+          <label for="notes" data-i18n="form.notes">Special Requests</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Dietary requirements, special occasion, seating preference…" data-i18n-ph="ph.notes"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-full">Confirm Reservation</button>
+        <button type="submit" class="btn btn-primary btn-full" data-i18n="form.submit">Confirm Reservation</button>
         <div class="form-success" id="form-success">
           <svg><use href="#icon-check"/></svg>
-          Thank you — we will confirm your reservation shortly.
+          <span data-i18n="form.success">Thank you — we will confirm your reservation shortly.</span>
         </div>
       </form>
     </div>
@@ -876,9 +1281,9 @@
   <section id="location">
     <div class="container">
       <div class="section-header">
-        <p class="section-eyebrow">Find Us</p>
-        <h2>In the Heart of Carvoeiro</h2>
-        <p class="section-sub">Estrada do Farol, steps from the village centre and Carvoeiro beach — easy to find, impossible to forget.</p>
+        <p class="section-eyebrow" data-i18n="loc.eyebrow">Find Us</p>
+        <h2 data-i18n="loc.title">In the Heart of Carvoeiro</h2>
+        <p class="section-sub" data-i18n="loc.sub">Estrada do Farol, steps from the village centre and Carvoeiro beach — easy to find, impossible to forget.</p>
       </div>
     </div>
     <div class="location-wrap">
@@ -899,33 +1304,33 @@
             <li>
               <svg><use href="#icon-pin"/></svg>
               <div>
-                <strong>Address</strong>
+                <strong data-i18n="loc.addr.label">Address</strong>
                 <span>Estrada do Farol nº3 r/c<br />Carvoeiro 8400-505, Portugal</span>
               </div>
             </li>
             <li>
               <svg><use href="#icon-phone"/></svg>
               <div>
-                <strong>Phone</strong>
+                <strong data-i18n="loc.phone.label">Phone</strong>
                 <span>+351 282 357 157</span>
               </div>
             </li>
             <li>
               <svg><use href="#icon-clock"/></svg>
               <div>
-                <strong>Hours</strong>
-                <span>Open Daily — 09:00 to 23:00</span>
+                <strong data-i18n="loc.hours.label">Hours</strong>
+                <span data-i18n="loc.hours.val">Open Daily — 09:00 to 23:00</span>
               </div>
             </li>
             <li>
               <svg><use href="#icon-utensils"/></svg>
               <div>
-                <strong>Cuisine</strong>
+                <strong data-i18n="loc.cuisine.label">Cuisine</strong>
                 <span>Portuguese · European · International</span>
               </div>
             </li>
           </ul>
-          <a href="#reservation" class="btn btn-primary" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;">
+          <a href="#reservation" class="btn btn-primary" style="margin-top:2rem;display:inline-flex;align-items:center;gap:.5rem;" data-i18n="loc.cta">
             Book a Table
           </a>
         </div>
@@ -943,30 +1348,38 @@
           <a href="tel:+351282357157">+351 282 357 157</a><br />
           Open daily 09:00 – 23:00
         </p>
+        <p class="footer-wifi">
+          <svg width="16" height="16"><use href="#icon-wifi"/></svg>
+          <span data-i18n="footer.wifi">Free Wi-Fi for customers</span>
+        </p>
       </div>
       <div class="footer-links">
-        <h4>Menu</h4>
+        <h4 data-i18n="footer.menu">Menu</h4>
         <ul>
-          <li><a href="#menu">Starters &amp; Couvert</a></li>
-          <li><a href="#menu">Salads</a></li>
-          <li><a href="#menu">Hamburgers</a></li>
-          <li><a href="#menu">Steakhouse</a></li>
-          <li><a href="#menu">Stone Experience</a></li>
-          <li><a href="#menu">Black Pig</a></li>
+          <li><a href="#menu" data-i18n="footer.starters">Starters &amp; Couvert</a></li>
+          <li><a href="#menu" data-i18n="footer.fsalads">Salads</a></li>
+          <li><a href="#menu" data-i18n="footer.wraps">Wraps &amp; Baguettes</a></li>
+          <li><a href="#menu" data-i18n="footer.pizzas">Pizzas &amp; Pastas</a></li>
+          <li><a href="#menu" data-i18n="footer.burgers">Hamburgers</a></li>
+          <li><a href="#menu" data-i18n="footer.chicken">Chicken &amp; Kebabs</a></li>
+          <li><a href="#menu" data-i18n="footer.steakhouse">Steakhouse</a></li>
+          <li><a href="#menu" data-i18n="footer.fstone">Stone Experience</a></li>
+          <li><a href="#menu" data-i18n="footer.fpig">Black Pig</a></li>
+          <li><a href="#menu" data-i18n="footer.ffish">Grilled Fish</a></li>
         </ul>
       </div>
       <div class="footer-links">
-        <h4>Visit</h4>
+        <h4 data-i18n="footer.visit">Visit</h4>
         <ul>
-          <li><a href="#chef">Our Story</a></li>
-          <li><a href="work-with-us.html">Work with Us</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#reservation">Reservations</a></li>
-          <li><a href="#location">Location &amp; Hours</a></li>
+          <li><a href="#chef" data-i18n="footer.story">Our Story</a></li>
+          <li><a href="work-with-us.html" data-i18n="footer.work">Work with Us</a></li>
+          <li><a href="#gallery" data-i18n="footer.gallery">Gallery</a></li>
+          <li><a href="#reservation" data-i18n="footer.reservations">Reservations</a></li>
+          <li><a href="#location" data-i18n="footer.location">Location &amp; Hours</a></li>
         </ul>
       </div>
       <div class="footer-social">
-        <h4>Follow Us</h4>
+        <h4 data-i18n="footer.follow">Follow Us</h4>
         <div class="social-links">
           <a href="https://www.instagram.com/centralcafecarvoeiro/" aria-label="Instagram">
             <svg><use href="#icon-instagram"/></svg>
@@ -985,7 +1398,7 @@
             <svg><use href="#icon-star"/></svg>
             <svg><use href="#icon-star"/></svg>
           </div>
-          <p>99+ reviews on TripAdvisor</p>
+          <p data-i18n="footer.reviews">99+ reviews on TripAdvisor</p>
         </div>
       </div>
     </div>
