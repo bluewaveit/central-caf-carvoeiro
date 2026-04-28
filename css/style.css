@@ -226,7 +226,7 @@ svg { display: block; }
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center; text-align: center;
   overflow: hidden;
-  background: url('images/143807-albums-4.jpg') center 40% / cover no-repeat;
+  background: url('../images/143807-albums-4.jpg') center 40% / cover no-repeat;
 }
 .hero-overlay {
   position: absolute; inset: 0;
@@ -363,7 +363,7 @@ svg { display: block; }
   box-shadow: 0 4px 20px var(--shadow); min-height: 280px;
 }
 .stone-hero-img {
-  background: url('images/stonesteak.png') center/cover no-repeat;
+  background: url('../images/stonesteak.png') center/cover no-repeat;
   position: relative; overflow: hidden;
 }
 .stone-hero-img video {
@@ -384,7 +384,7 @@ svg { display: block; }
 .spotlight { background: var(--espresso); overflow: hidden; }
 .spotlight-inner { display: grid; grid-template-columns: 1fr 1fr; min-height: 500px; }
 .spotlight-img {
-  background: url('images/King\ Prawn\ Penne.jpg') center/cover no-repeat;
+  background: url('../images/King\ Prawn\ Penne.jpg') center/cover no-repeat;
   min-height: 400px;
 }
 .spotlight-text {
@@ -423,7 +423,7 @@ svg { display: block; }
 .chef-image-wrap { position: relative; align-self: center; }
 .chef-image {
   width: 100%; aspect-ratio: 4/5; border-radius: var(--radius);
-  background: url('images/0260417_164053_Instagram.jpg') center top / cover no-repeat;
+  background: url('../images/0260417_164053_Instagram.jpg') center top / cover no-repeat;
   box-shadow: 0 20px 60px rgba(44,24,16,0.22);
 }
 .chef-badge {
